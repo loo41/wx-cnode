@@ -1,0 +1,36 @@
+<view>
+    <view class="header">
+        <view class="header-top">{{title}}</view>
+        <view class="header-but">
+            <text>查看人数: {{otherData.look}}</text>
+            <text>发布时间: {{otherData.time}}</text> 
+            <text>作者: {{otherData.author}}</text>
+        </view>
+    </view>
+
+    <import src="/wxParse/wxParse.wxml"/>
+    <view class="con">
+        <template is="wxParse" data="{{wxParseData:article.nodes}}" class="con"/>
+    </view>
+
+    <view class="replies">
+        <view wx:for="{{replies}}" wx:for-index="idx">
+            <view class="rp-con">
+                <view class="rp-con_auther">
+                    <view class="rp-con_auther-img">
+                        <image src="{{item.author.avatar_url}}" class="img-full"></image>
+                    </view>
+                    <view class="rp-con_auther-au">{{item.author.loginname}}</view>
+                </view>
+                <view class="re-con_con">
+                    <view class="re-con_con-con">{{item.content}}</view>
+                    <view class="re-con_con-timer">发布时间: {{item.create_at}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view class="displayGithub">
+        <view>github: https://github.com/loo41</view>
+    </view>
+</view>

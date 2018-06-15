@@ -1,0 +1,45 @@
+<view class="user-box">
+    <scroll-view scroll-x="y" class="user-box">
+    <view class="header">
+        <view class="header-img">
+            <image src="{{user.avatar_url}}"  class="img-full"/>
+        </view>
+        <view class="header-author">{{user.loginname}}</view>
+    </view>
+    <view class="recent-topics">
+        <view class="recent">最近创建话题</view>
+        <view wx:for="{{user.recent_topics}}" wx:for-index="idx">
+            <view class="user-recent">
+                <view class="user-recent_img">
+                    <image src="{{item.author.avatar_url}}" class="img-full" />
+                </view>
+                <view class="user-recent_con">
+                    <view class="user-recent_cons" id="{{item.id}}" bindtap="displayCon">{{item.title}}</view>
+                    <view class="user-recent_oth">
+                        <text>user: {{item.author.loginname}}</text>
+                        <text>time: {{item.last_reply_at}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view class="recent-topics">
+    <view class="recent">最近参与话题</view>
+        <view wx:for="{{user.recent_replies}}" wx:for-index="idx">
+            <view class="user-recent">
+                <view class="user-recent_img">
+                    <image src="{{item.author.avatar_url}}" class="img-full" />
+                </view>
+                <view class="user-recent_con">
+                    <view class="user-recent_cons" id="{{item.id}}" bindtap="displayCon">{{item.title}}</view>
+                    <view class="user-recent_oth">
+                        <text>user: {{item.author.loginname}}</text>
+                        <text>time: {{item.last_reply_at}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    </scroll-view>
+</view>

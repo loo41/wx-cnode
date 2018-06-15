@@ -1,0 +1,27 @@
+<view class="wrapper">
+  <scroll-view scroll-y class="scroll-wrapper" style="height:{{scrollHeight}}px;" bindscrolltolower="loadingMore">
+      <view wx:for="{{list}}" wx:for-index="idx">
+        <view class="con-box">
+          <view class="con-box-left">
+            <view class="con-box-left-left" bindtap="lookUser" id="{{item.author.loginname}}"><image src="{{item.author.avatar_url}}" class="img-full"></image></view>
+            <view class="con-box-left-reight">
+              <text class="con-box-left-reight-con top" wx:if="{{item.top}}">置顶</text>
+              <text class="con-box-left-reight-con good" wx:elif="{{item.good}}">精华</text>
+              <text class="con-box-left-reight-con share" wx:elif="{{item.tab == 'share'}}">分享</text>
+              <text class="con-box-left-reight-con ask" wx:elif="{{item.tab == 'ask'}}">问答</text>
+              <text class="con-box-left-reight-con job" wx:elif="{{item.tab == 'job'}}">招聘</text>
+            </view>
+          </view>
+          <view class="con-box-reight">
+            <view class="con-box-reight-con">
+              <view class="con-box-reight-con_top" bindtap="lookContent" id="{{item.id}}">{{item.title}}</view>
+              <view class="con-box-reight-con_bot">
+                <view>{{item.visit_count}}/{{item.reply_count}}</view>
+                <view>{{item.create_at}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+  </scroll-view >
+</view>

@@ -1,0 +1,77 @@
+.con-box{
+    height: 100rpx;
+    display: flex;
+    flex-direction: row;
+}
+.con-box-left {
+    width: 25%;
+    display: flex;
+}
+.con-box-left-left {
+    width: 50%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 10%;
+}
+.con-box-left-reight {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.con-box-left-reight-con {
+    height: 50%;
+    width: 80%;
+    color: white;
+    border-radius: 15%;
+    text-align: center;
+    line-height: 50rpx;
+    font-size: 22rpx;
+}
+.top {
+    background: green;
+}
+.good {
+    background: #80bd01;
+}
+.share {
+    background: gray;
+}
+.ask {
+    background: goldenrod;
+}
+.job {
+    background: black;
+}
+.img-full {
+    width: 100%;
+    height: 100%;
+    padding: 10%
+}
+.con-box-reight{
+    width: 75%;
+    padding-right: 2%;
+    box-sizing: border-box;
+}
+.con-box-reight-con {
+    display: flex;
+    flex-direction: column;
+}
+.con-box-reight-con_top {
+    height: 80%;
+    text-align: left;
+    line-height: 80rpx;
+    font-size: 28rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.con-box-reight-con_bot {
+    display: flex;
+    line-height: 20rpx;
+    justify-content: space-between;
+    font-size: 20rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

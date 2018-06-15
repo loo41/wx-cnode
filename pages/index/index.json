@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "cnode社区",
+    "usingComponents": {
+        "list-wrapper": "/pages/components/list-wrapper/list-wrapper"
+    }
+}

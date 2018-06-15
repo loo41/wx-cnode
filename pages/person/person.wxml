@@ -1,0 +1,63 @@
+<!--logs.wxml-->
+<view class="container">
+    <view class="{{inputName}}">
+        <view class="dialog">
+            <view class="dialog-top">
+                <input type="text" placeholder="请输入name" auto-focus bindinput="_inputValue" value="{{Value}}"/>
+            </view>
+            <view class="dialog-but">
+                <button bindtap="_out"> 取消 </button>
+                <button bindtap="_out"> 确定 </button>
+            </view>
+        </view>
+    </view>
+    <view class="{{inputName !== 'inputName'? die: active}} con-box">
+        <view>
+            <view class="header">
+                <view class="header-left">
+                    <image src="{{userData.avatar_url}}" class="img-full"/>
+                    <text class="heade-text">{{userData.loginname}}</text>
+                </view>
+                <view class="header-right">
+                    <text>访问人数: {{userData.score}}</text>
+                    <text>timer: {{userData.create_at}}</text>
+                    <text class="out" bindtap="_OpenWindows">登陆</text>
+                    <text class="out" bindtap="_OpenWindows">退出登陆</text>
+                </view>
+            </view>
+            <view class="con">
+                <view wx:for="{{userData.recent_topics}}" wx:for-index="idx">
+                    <view class="recent">最近创建话题</view>
+                    <view class="user-recent">
+                        <view class="user-recent_img">
+                            <image src="{{item.author.avatar_url}}" class="img-full" />
+                        </view>
+                        <view class="user-recent_con">
+                            <view class="user-recent_cons" id="{{item.id}}" bindtap="displayCon">{{item.title}}</view>
+                            <view class="user-recent_oth">
+                                <text>user: {{item.author.loginname}}</text>
+                                <text>time: {{item.last_reply_at}}</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+
+                <view wx:for="{{userData.recent_topics}}" wx:for-index="idx">
+                    <view class="recent">参与话题</view>
+                    <view class="user-recent">
+                        <view class="user-recent_img">
+                            <image src="{{item.author.avatar_url}}" class="img-full" />
+                        </view>
+                        <view class="user-recent_con">
+                            <view class="user-recent_cons" id="{{item.id}}" bindtap="displayCon">{{item.title}}</view>
+                            <view class="user-recent_oth">
+                                <text>user: {{item.author.loginname}}</text>
+                                <text>time: {{item.last_reply_at}}</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
