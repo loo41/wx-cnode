@@ -4,8 +4,8 @@ const {_sendAjax} = require('../../utils/util.js');
 
 Page({
   data: {
-    user: 'loo41',
-    inputName: 'outInput',
+    user: null,
+    inputName: 'inputName',
     userData: {},
     Value: ""
   },
@@ -35,7 +35,6 @@ Page({
     })
   },
   onLoad: function () {
-    return this._out()
     let that = this
     that._getLocalUser().catch(() => {
       that.setData({
